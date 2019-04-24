@@ -31,9 +31,9 @@ class ToDoMenuTest {
 	void testDisplayMenu() {
 		ToDoMenu SUT = new ToDoMenu();
 		SUT.displayMenu();
-		String expected = "Please select a menu item:\r\n";
-		expected += "1. Enter a new task.\r\n";
-		expected += "X. Exit applicaiton\r\n";
+		String expected = "Please select a menu item:" + System.lineSeparator();
+		expected += "1. Enter a new task." + System.lineSeparator();
+		expected += "X. Exit applicaiton" + System.lineSeparator();
 		
 		originalOut.println(outContent.toString());
 		

@@ -25,10 +25,8 @@ public class ToDo {
 			}
 			
 			// Menu
-			
-			System.out.println("Please select a menu item:");
-			System.out.println("1. Enter a new task.");
-			System.out.println("X. Exit applicaiton");
+			ToDoMenu menu = new ToDoMenu();
+			menu.displayMenu();
 			selected = scanner.nextLine();
 			switch (selected) {
 			case "1":

@@ -33,7 +33,7 @@ class ToDoMenuTest {
 		SUT.displayMenu();
 		String expected = "Please select a menu item:" + System.lineSeparator();
 		expected += "1. Enter a new task." + System.lineSeparator();
-		expected += "X. Exit applicaiton" + System.lineSeparator();
+		expected += "X. Exit application" + System.lineSeparator();
 		
 		originalOut.println(outContent.toString());
 		

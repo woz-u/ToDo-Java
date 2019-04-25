@@ -14,15 +14,9 @@ public class ToDo {
 
 		for (String selected = ""; !selected.equalsIgnoreCase("x");) {
 			// Task List
-			System.out.println("Current list of tasks:");
-			System.out.println("*******************");
 			List<Task> tasks = taskMan.getTasks();
-			for (Task task : tasks) {
-				System.out.println("Name: 		" + task.getTaskName());
-				System.out.println("Description: 	" + task.getTaskDescription());
-				System.out.println("Assigned: 	" + task.getAssignedPerson());
-				System.out.println("-------------------");
-			}
+			TaskReporter taskReporter = new TaskReporter();
+			taskReporter.printTasks(tasks);
 			
 			// Menu
 			ToDoMenu menu = new ToDoMenu();
@@ -30,12 +24,10 @@ public class ToDo {
 			selected = scanner.nextLine();
 			switch (selected) {
 			case "1":
-				System.out.println("Please give this task a name:");
-				String taskName = scanner.nextLine();
-				System.out.println("Please give the description of this task:");
-				String taskDescription = scanner.nextLine();
-				System.out.println("Assign this task to:");
-				String assignTo = scanner.nextLine();
+				NewTaskPromptHelper promptHelper = new NewTaskPromptHelper(scanner);
+				String taskName = promptHelper.promptTaskName();
+				String taskDescription = promptHelper.promptTaskDescription();
+				String assignTo = promptHelper.promptAssignPerson();
 				taskMan.addTask(taskName, taskDescription, assignTo);
 				break;
 			case "x":

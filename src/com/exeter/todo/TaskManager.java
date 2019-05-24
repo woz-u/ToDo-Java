@@ -11,13 +11,13 @@ public class TaskManager {
 	}
 
 	public void addTask(String taskName, String taskDescription, String assignedPerson) throws IllegalArgumentException {
-		if (taskName == null || taskName.isBlank()) {
+		if (taskName == null || taskName.isEmpty()) {
 			throw new IllegalArgumentException("Missing value for Task Name.");
 		}
-		if (taskDescription == null || taskDescription.isBlank()) {
+		if (taskDescription == null || taskDescription.isEmpty()) {
 			throw new IllegalArgumentException("Missing value for Task Description.");
 		}
-		if (assignedPerson == null || assignedPerson.isBlank()) {
+		if (assignedPerson == null || assignedPerson.isEmpty()) {
 			throw new IllegalArgumentException("Missing value for Assigned Person.");
 		}
 		Task newTask = new Task(taskName, taskDescription, assignedPerson);
